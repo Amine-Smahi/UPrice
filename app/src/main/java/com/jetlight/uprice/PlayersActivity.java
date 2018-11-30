@@ -1,7 +1,9 @@
 package com.jetlight.uprice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class PlayersActivity extends AppCompatActivity {
 
@@ -9,5 +11,24 @@ public class PlayersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players);
+    }
+
+    public void playerSelected(View view) {
+        Intent intent = new Intent(PlayersActivity.this, PhaseOneActivity.class);
+        switch (view.getId()) {
+            case R.id.imageButtonTwoPlayers:
+                intent.putExtra("playersCount", 2);
+                break;
+            case R.id.imageButtonThreePlayers:
+                intent.putExtra("playersCount", 3);
+                break;
+            case R.id.imageButtonFourPlayers:
+                intent.putExtra("playersCount", 4);
+                break;
+            default:
+                intent = null;
+                break;
+        }
+        startActivity(intent);
     }
 }
