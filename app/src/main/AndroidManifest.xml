@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".PhaseOneActivity" />
         <activity android:name=".PhaseTwoActivity" />
-        <activity android:name=".PlayersActivity"></activity>
+        <activity android:name=".PlayersActivity" />
+        <activity android:name=".WinnerActivity"></activity>
     </application>
 
 </manifest>
