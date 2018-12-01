@@ -46,6 +46,7 @@
     </LinearLayout>
 </RelativeLayout>
     <ImageView
+        android:id="@+id/ImageViewproductImage"
         android:layout_width="280dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
@@ -60,6 +61,7 @@
         android:text="Guess the price of"
         android:textSize="16dp"/>
     <TextView
+        android:id="@+id/TextViewproductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -73,6 +75,7 @@
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
         <EditText
+            android:id="@+id/EditTextproductPrice"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#5DA9F4"

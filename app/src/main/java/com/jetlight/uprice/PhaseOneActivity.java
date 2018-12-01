@@ -1,15 +1,10 @@
 package com.jetlight.uprice;
 
 import android.content.Intent;
-<<<<<<< HEAD
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-=======
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
+
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +13,6 @@ import com.jetlight.uprice.Models.Product;
 
 import java.util.ArrayList;
 import java.util.Random;
->>>>>>> 645337d597c60c03c7be044578bc546e05e5e2ba
 
 public class PhaseOneActivity extends AppCompatActivity {
 
@@ -59,13 +53,12 @@ public class PhaseOneActivity extends AppCompatActivity {
         passTurn();
     }
 
-<<<<<<< HEAD
     public void SecondActivityTransaction(View v)
     {
         Intent intent = new Intent(this,PhaseTwoActivity.class);
         startActivity(intent);
     }
-=======
+
     private void passTurn() {
         j++;
         if(j==playersPrices.length){
@@ -77,7 +70,4 @@ public class PhaseOneActivity extends AppCompatActivity {
     private void winner() {
         settingInfo();
     }
-
-
->>>>>>> 645337d597c60c03c7be044578bc546e05e5e2ba
 }
