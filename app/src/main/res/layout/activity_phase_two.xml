@@ -19,12 +19,14 @@
             android:textSize="20dp"
             android:text="8/12"
             android:textStyle="bold"
+            android:textColor="#fff"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="#fff"
+            android:background="@mipmap/home"
+            android:padding="8dp"
             android:layout_centerInParent="true"
             android:layout_alignParentRight="true"/>
         <LinearLayout
@@ -34,13 +36,14 @@
             android:gravity="center"
             android:layout_centerHorizontal="true">
             <ImageView
-                android:background="#fff"
-                android:layout_width="20dp"
-                android:layout_height="20dp"/>
+                android:background="@mipmap/clock"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
+                android:textColor="#fff"
                 android:layout_marginTop="2dp"
                 android:text="00:05"/>
         </LinearLayout>
