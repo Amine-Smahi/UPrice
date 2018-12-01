@@ -51,6 +51,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        android:padding="5dp"
         android:foregroundGravity="center"
         android:background="@drawable/card_background_images"/>
     <TextView
