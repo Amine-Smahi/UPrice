@@ -18,9 +18,10 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.jetlight.uprice.Models.Product.products;
+
 public class PhaseOneActivity extends AppCompatActivity {
 
-    ArrayList<Product> products =new ArrayList<>();
     ImageView imageView;
     TextView textView;
     int productPrice;
@@ -37,8 +38,6 @@ public class PhaseOneActivity extends AppCompatActivity {
         editText = (EditText)findViewById(R.id.EditTextproductPrice);
         clock = (TextView) findViewById(R.id.clock);
         Intent intent = getIntent();
-        products.add(new Product("OMO 250 KG",65, R.mipmap.omo));
-        products.add(new Product("ARIEL 250 KG",44,R.mipmap.ariel));
         playersPrices = new int[intent.getIntExtra("playersCount",0)];
         settingInfo();
     }
