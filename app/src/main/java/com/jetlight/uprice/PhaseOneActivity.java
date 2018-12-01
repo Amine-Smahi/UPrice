@@ -32,8 +32,8 @@ public class PhaseOneActivity extends AppCompatActivity {
         textView = (TextView)findViewById(R.id.TextViewproductName);
         editText = (EditText)findViewById(R.id.EditTextproductPrice);
         Intent intent = getIntent();
-        products.add(new Product("OMO",65, R.drawable.trump));
-        products.add(new Product("toz",44,R.drawable.profile));
+        products.add(new Product("OMO 250 KG",65, R.mipmap.omo));
+        products.add(new Product("ARIEL 250 KG",44,R.mipmap.ariel));
         playersPrices = new int[intent.getIntExtra("playersCount",0)];
         settingInfo();
     }

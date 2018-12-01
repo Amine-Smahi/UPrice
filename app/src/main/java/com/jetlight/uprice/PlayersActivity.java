@@ -1,10 +1,7 @@
 package com.jetlight.uprice;
 
 import android.content.Intent;
-<<<<<<< HEAD
-=======
 import android.net.Uri;
->>>>>>> 645337d597c60c03c7be044578bc546e05e5e2ba
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,12 +17,6 @@ public class PlayersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_players);
     }
 
-<<<<<<< HEAD
-    public void FirstActivityTransaction(View view) {
-        Intent intent = new Intent(this,PhaseOneActivity.class);
-        startActivity(intent);
-
-=======
     public void playerSelected(View view) {
         Intent intent = new Intent(PlayersActivity.this, PhaseOneActivity.class);
         switch (view.getId()) {
@@ -43,6 +34,5 @@ public class PlayersActivity extends AppCompatActivity {
                 break;
         }
         startActivity(intent);
->>>>>>> 645337d597c60c03c7be044578bc546e05e5e2ba
     }
 }

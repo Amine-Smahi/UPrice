@@ -103,7 +103,7 @@
             android:textSize="18dp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:onClick="SecondActivityTransaction"
+            android:onClick="submitPrice"
             />
     </LinearLayout>
 
