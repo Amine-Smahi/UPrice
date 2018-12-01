@@ -22,13 +22,14 @@
             android:textColor="#fff"
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true" />
-        <ImageView
+        <ImageButton
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@mipmap/home"
             android:padding="8dp"
             android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:onClick="Restart"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"/>
             <TextView
+                android:id="@+id/clock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
