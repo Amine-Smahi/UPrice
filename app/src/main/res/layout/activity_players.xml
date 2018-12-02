@@ -9,29 +9,46 @@
     tools:context="com.jetlight.uprice.PlayersActivity">
 <ImageButton
     android:id="@+id/imageButtonTwoPlayers"
-    android:layout_width="200dp"
-    android:layout_height="100dp"
-    android:background="#12B166"
-    android:layout_margin="20dp"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:background="@mipmap/avatar2"
     android:layout_gravity="center"
     android:onClick="playerSelected"
     />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="2 Players"
+        android:background="#12B166"
+        android:textColor="#fff"
+        android:layout_marginBottom="30dp"/>
     <ImageButton
         android:id="@+id/imageButtonThreePlayers"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:background="#12B166"
-        android:layout_margin="20dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/avatar3"
         android:layout_gravity="center"
         android:onClick="playerSelected"
         />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="3 Player"
+        android:background="#12B166"
+        android:textColor="#fff"
+        android:layout_marginBottom="30dp"/>
     <ImageButton
         android:id="@+id/imageButtonFourPlayers"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:background="#12B166"
-        android:layout_margin="20dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/avatar4"
         android:layout_gravity="center"
         android:onClick="playerSelected"
         />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="4 Players"
+        android:background="#12B166"
+        android:textColor="#fff"/>
 </LinearLayout>

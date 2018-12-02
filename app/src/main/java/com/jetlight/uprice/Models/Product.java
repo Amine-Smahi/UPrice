@@ -11,15 +11,11 @@ public class Product {
     private String name;
     private int price;
     private int imageLink;
-    public static ArrayList<Product> products =new ArrayList<>();
-
     public Product(String name, int price, int imageLink) {
         this.name = name;
         this.price = price;
         this.imageLink = imageLink;
-        initializer();
     }
-
     public String getName() {
         return name;
     }
@@ -42,11 +38,5 @@ public class Product {
 
     public void setImageLink(int imageLink) {
         this.imageLink = imageLink;
-    }
-
-    public void initializer()
-    {
-        products.add(new Product("OMO 250 KG",65, R.mipmap.omo));
-        products.add(new Product("Ariel 250 KG",165, R.mipmap.ariel));
     }
 }
