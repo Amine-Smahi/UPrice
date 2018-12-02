@@ -38,7 +38,8 @@
             android:background="#12B166"
             android:textColor="#fff"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp"
+            android:onClick="Restart"/>
     </LinearLayout>
 
 </RelativeLayout>

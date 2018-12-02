@@ -42,4 +42,9 @@ public class PhaseTwoActivity extends AppCompatActivity {
             }
         }.start();
     }
+
+    public void WinnerTransaction(View view) {
+        Intent intent = new Intent(this,WinnerActivity.class);
+        startActivity(intent);
+    }
 }
