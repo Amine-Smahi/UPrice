@@ -1,8 +1,10 @@
 package com.jetlight.uprice;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +19,10 @@ public class PhaseTwoActivity extends AppCompatActivity {
         clock = (TextView) findViewById(R.id.clock);
         imageView = (ImageView) findViewById(R.id.imageView2);
         imageView.setImageDrawable(getResources().getDrawable(R.mipmap.omo));
+    }
+    public void Restart(View view) {
+        Intent intent = new Intent(this,PlayersActivity.class);
+        startActivity(intent);
     }
     @Override
     protected void onStart() {

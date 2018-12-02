@@ -24,8 +24,8 @@
             android:layout_centerInParent="true"
             android:layout_alignParentLeft="true" />
         <ImageButton
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
             android:layout_marginRight="2dp"
             android:background="@mipmap/home"
             android:layout_centerInParent="true"

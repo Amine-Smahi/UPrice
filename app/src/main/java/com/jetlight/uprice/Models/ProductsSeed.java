@@ -4,7 +4,6 @@ import com.jetlight.uprice.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by moham on 01/12/2018.

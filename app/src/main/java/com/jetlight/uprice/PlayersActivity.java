@@ -1,14 +1,9 @@
 package com.jetlight.uprice;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import com.jetlight.uprice.Models.Product;
-
-import java.util.ArrayList;
 
 public class PlayersActivity extends AppCompatActivity {
     @Override

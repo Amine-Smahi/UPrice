@@ -1,12 +1,5 @@
 package com.jetlight.uprice.Models;
 
-import android.net.Uri;
-
-import com.jetlight.uprice.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Product {
     private String name;
     private int price;
