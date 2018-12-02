@@ -16,12 +16,14 @@
     android:onClick="playerSelected"
     />
     <Button
+        android:id="@+id/p2"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="2 Players"
         android:background="#12B166"
         android:textColor="#fff"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:onClick="playerSelected"/>
     <ImageButton
         android:id="@+id/imageButtonThreePlayers"
         android:layout_width="80dp"
@@ -31,12 +33,14 @@
         android:onClick="playerSelected"
         />
     <Button
+        android:id="@+id/p3"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="3 Player"
         android:background="#12B166"
         android:textColor="#fff"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:onClick="playerSelected"/>
     <ImageButton
         android:id="@+id/imageButtonFourPlayers"
         android:layout_width="80dp"
@@ -46,9 +50,11 @@
         android:onClick="playerSelected"
         />
     <Button
+        android:id="@+id/p4"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="4 Players"
         android:background="#12B166"
-        android:textColor="#fff"/>
+        android:textColor="#fff"
+        android:onClick="playerSelected"/>
 </LinearLayout>

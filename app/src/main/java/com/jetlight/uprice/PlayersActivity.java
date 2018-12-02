@@ -23,8 +23,17 @@ public class PlayersActivity extends AppCompatActivity {
             case R.id.imageButtonTwoPlayers:
                 intent.putExtra("playersCount", 2);
                 break;
+            case R.id.p2:
+                intent.putExtra("playersCount", 2);
+                break;
+            case R.id.p3:
+                intent.putExtra("playersCount", 3);
+                break;
             case R.id.imageButtonThreePlayers:
                 intent.putExtra("playersCount", 3);
+                break;
+            case R.id.p4:
+                intent.putExtra("playersCount", 4);
                 break;
             case R.id.imageButtonFourPlayers:
                 intent.putExtra("playersCount", 4);
