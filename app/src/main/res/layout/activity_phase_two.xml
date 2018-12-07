@@ -66,53 +66,58 @@
         android:layout_marginTop="10dp"
         android:text="Guess the price of"
         android:textSize="16dp"/>
+
     <TextView
+        android:id="@+id/textviewProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="2dp"
         android:gravity="center"
         android:text="OMO 250G"
-        android:layout_margin="2dp"
-        android:textSize="25dp"/>
+        android:textSize="25dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
+
         <Button
+            android:id="@+id/button1"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="125 DA"
-            android:background="@drawable/button_radius"
-            android:textColor="#fff"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_radius"
+            android:gravity="center"
             android:onClick="WinnerTransaction"
-            />
+            android:text="125 DA"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+
         <Button
+            android:id="@+id/button2"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_radius"
+            android:gravity="center"
             android:text="140 DA"
-            android:background="@drawable/button_radius"
             android:textColor="#fff"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:layout_margin="5dp"
-            android:layout_gravity="center"
-            />
+            android:textSize="18dp" />
+
         <Button
+            android:id="@+id/button3"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="165 DA"
-            android:background="@drawable/button_radius"
-            android:textColor="#fff"
-            android:textSize="18dp"
-            android:gravity="center"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
-            />
+            android:layout_margin="5dp"
+            android:background="@drawable/button_radius"
+            android:gravity="center"
+            android:text="165 DA"
+            android:textColor="#fff"
+            android:textSize="18dp" />
     </LinearLayout>
 
 </LinearLayout>
