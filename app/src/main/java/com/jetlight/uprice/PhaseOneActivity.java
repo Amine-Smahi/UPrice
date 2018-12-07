@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jetlight.uprice.Models.Product;
 
@@ -21,8 +22,11 @@ public class PhaseOneActivity extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
     int productPrice;
+    Product product;
     EditText editText;
+    static int indexGagnant=0;
     TextView clock;
+    int [] playersScore;
     int [] playersPrices;
     static int j=0;
     CountDownTimer countDownTimer;
@@ -37,6 +41,7 @@ public class PhaseOneActivity extends AppCompatActivity {
         clock = (TextView) findViewById(R.id.clock);
         Intent intent = getIntent();
         playersPrices = new int[intent.getIntExtra("playersCount",0)];
+        playersScore = new int[intent.getIntExtra("playersCount",0)];
         settingInfo();
     }
 
@@ -49,7 +54,7 @@ public class PhaseOneActivity extends AppCompatActivity {
     void settingInfo(){
         if(products.size()!=0) {
             int randomIndex = new Random().nextInt(products.size());
-            Product product = products.get(randomIndex);
+            product = products.get(randomIndex);
             imageView.setImageDrawable(getResources().getDrawable(product.getImageLink()));
             textView.setText(product.getName());
             productPrice = product.getPrice();
@@ -88,7 +93,28 @@ public class PhaseOneActivity extends AppCompatActivity {
     }
 
     private void winner() {
+        int min=-1;
+
+        for(int i=0;i<playersPrices.length;i++){
+            if (playersPrices[i]<=product.getPrice() && playersPrices[i]>min ){
+                min =playersPrices[i];
+                indexGagnant = i;
+            }
+        }
         settingInfo();
+        if (min!=-1){
+            playersScore[indexGagnant]++;
+            alert.showDialog(PhaseOneActivity.this, "  Congrats \n Player " + (indexGagnant+1) +  " won!  ");
+        }
+
+    }
+
+    private void winnersPhaseOne(){
+        int winner1;
+        int winner2;
+        for (int i=0;i<playersScore.length;i++){
+
+        }
     }
 
     public void Restart(View view) {
