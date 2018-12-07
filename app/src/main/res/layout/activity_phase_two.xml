@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.jetlight.uprice.PhaseTwoActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,56 +17,62 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="2dp"
+            android:text="8/12"
             android:textColor="#fff"
             android:textSize="24dp"
-            android:text="8/12"
-            android:textStyle="bold"
-            android:layout_marginLeft="2dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentLeft="true" />
+            android:textStyle="bold" />
+
         <ImageButton
             android:layout_width="33dp"
             android:layout_height="33dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
             android:layout_marginRight="2dp"
             android:background="@mipmap/home"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:onClick="Restart"/>
+            android:onClick="Restart" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:layout_centerHorizontal="true">
+            android:orientation="vertical">
+
             <ImageView
-                android:background="@mipmap/clock"
                 android:layout_width="28dp"
-                android:layout_height="28dp"/>
+                android:layout_height="28dp"
+                android:background="@mipmap/clock" />
+
             <TextView
                 android:id="@+id/clock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:text="00:05"
                 android:textColor="#fff"
-                android:text="00:05"/>
+                android:textSize="16dp" />
         </LinearLayout>
     </RelativeLayout>
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="280dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        android:background="@drawable/card_background_images"
         android:foregroundGravity="center"
-        android:padding="8dp"
-        android:background="@drawable/card_background_images"/>
+        android:padding="8dp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="Guess the price of"
-        android:textSize="16dp"/>
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/textviewProductName"
@@ -79,8 +86,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/button1"
@@ -90,7 +97,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/button_radius"
             android:gravity="center"
-            android:onClick="WinnerTransaction"
+            android:onClick="submitClick"
             android:text="125 DA"
             android:textColor="#fff"
             android:textSize="18dp" />
@@ -103,6 +110,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/button_radius"
             android:gravity="center"
+            android:onClick="submitClick"
             android:text="140 DA"
             android:textColor="#fff"
             android:textSize="18dp" />
@@ -115,6 +123,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/button_radius"
             android:gravity="center"
+            android:onClick="submitClick"
             android:text="165 DA"
             android:textColor="#fff"
             android:textSize="18dp" />
