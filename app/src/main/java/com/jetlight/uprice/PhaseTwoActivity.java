@@ -28,7 +28,7 @@ public class PhaseTwoActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
     }
-   /* void settingInfo(){
+    void settingInfo(){
         if(products.size()!=0) {
             int randomIndex = new Random().nextInt(products.size());
             product = products.get(randomIndex);
@@ -40,18 +40,8 @@ public class PhaseTwoActivity extends AppCompatActivity {
         }
         else {
             winnersPhaseOne();
-            ViewDialog.showDialog(PhaseOneActivity.this, "  Congrats \n Player" + winner1 + " and Player" + winner2 + " won!  ", new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(PhaseOneActivity.this,PhaseTwoActivity.class);
-                    intent.putExtra("winner1",winner1);
-                    intent.putExtra("winner2",winner2);
-                    startActivity(intent);
-                }
-            });
-
         }
-    }*/
+    }
     public void Restart(View view) {
         Intent intent = new Intent(this,PlayersActivity.class);
         startActivity(intent);

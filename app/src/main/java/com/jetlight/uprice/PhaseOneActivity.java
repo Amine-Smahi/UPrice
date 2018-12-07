@@ -53,7 +53,7 @@ public class PhaseOneActivity extends AppCompatActivity {
     }
 
     void settingInfo(){
-        if(products.size()!=0) {
+        if(products.size()!=3) {
             int randomIndex = new Random().nextInt(products.size());
             product = products.get(randomIndex);
             imageView.setImageDrawable(getResources().getDrawable(product.getImageLink()));
