@@ -1,6 +1,7 @@
 package com.jetlight.uprice;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.view.View;
 import android.view.Window;
@@ -13,23 +14,23 @@ import android.widget.TextView;
 
 public class ViewDialog {
 
-    public void showDialog(Activity activity, String msg){
-        final Dialog dialog = new Dialog(activity);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(false);
-        dialog.setContentView(R.layout.dialog);
+    public static void showDialog(Activity activity, String msg, View.OnClickListener action){
 
-        TextView text = (TextView) dialog.findViewById(R.id.text_dialog);
-        text.setText(msg);
-
-        Button dialogButton = (Button) dialog.findViewById(R.id.btn_dialog);
-        dialogButton.setOnClickListener(new View.OnClickListener() {
+        AlertDialog.Builder b = new AlertDialog.Builder(activity);
+        View v = activity.getLayoutInflater().inflate(R.layout.dialog, null);
+        TextView textView = (TextView)v.findViewById(R.id.text_dialog);
+        Button btn =(Button)v.findViewById(R.id.btn_dialog);
+        textView.setText(msg);
+        b.setView(v);
+        final AlertDialog a = b.create();
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                dialog.dismiss();
+            public void onClick(View view) {
+                a.hide();
             }
         });
-
-        dialog.show();
+        if(action != null)
+        btn.setOnClickListener(action);
+        a.show();
     }
 }

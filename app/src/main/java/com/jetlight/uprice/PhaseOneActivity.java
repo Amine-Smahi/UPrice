@@ -19,6 +19,8 @@ import static com.jetlight.uprice.Models.ProductsSeed.products;
 
 public class PhaseOneActivity extends AppCompatActivity {
 
+    int winner2;
+    int winner1;
     ImageView imageView;
     TextView textView;
     int productPrice;
@@ -30,7 +32,6 @@ public class PhaseOneActivity extends AppCompatActivity {
     int [] playersPrices;
     static int j=0;
     CountDownTimer countDownTimer;
-    ViewDialog alert = new ViewDialog();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,19 +59,21 @@ public class PhaseOneActivity extends AppCompatActivity {
             imageView.setImageDrawable(getResources().getDrawable(product.getImageLink()));
             textView.setText(product.getName());
             productPrice = product.getPrice();
-            ViewDialog alert = new ViewDialog();
             playerSelection();
             products.remove(randomIndex);
         }
         else {
-            alert.showDialog(PhaseOneActivity.this, "  Congrats \n Player 1 won!  ");
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    Intent intent = new Intent(PhaseOneActivity.this, PhaseTwoActivity.class);
+            winnersPhaseOne();
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Congrats \n Player" + winner1 + " and Player" + winner2 + " won!  ", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(PhaseOneActivity.this,PhaseTwoActivity.class);
+                    intent.putExtra("winner1",winner1);
+                    intent.putExtra("winner2",winner2);
                     startActivity(intent);
                 }
-            }, 1500);
+            });
+
         }
     }
 
@@ -104,17 +107,28 @@ public class PhaseOneActivity extends AppCompatActivity {
         settingInfo();
         if (min!=-1){
             playersScore[indexGagnant]++;
-            alert.showDialog(PhaseOneActivity.this, "  Congrats \n Player " + (indexGagnant+1) +  " won!  ");
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Congrats \n Player " + (indexGagnant + 1) + " won!  ", null);
         }
 
     }
 
     private void winnersPhaseOne(){
-        int winner1;
-        int winner2;
-        for (int i=0;i<playersScore.length;i++){
-
+        winner1=0;
+        winner2=playersScore.length-1;
+        for (int i=1;i<playersScore.length;i++){
+            if(playersScore[i]>playersScore[winner1]){
+                winner1=i;
+            }
         }
+        for (int i=0;i<playersScore.length-1;i++){
+            if(i!= winner1 && playersScore[i]>playersScore[winner2] ){
+                winner2=i;
+            }
+        }
+        winner1++;
+        winner2++;
+        //Toast.makeText(this,"Les finalistes sont:"+ (winner1+1) + " et " + (winner2+1),Toast.LENGTH_SHORT).show();
+
     }
 
     public void Restart(View view) {
@@ -152,16 +166,16 @@ public class PhaseOneActivity extends AppCompatActivity {
     void playerSelection()
     {
         if(j==0){
-            alert.showDialog(PhaseOneActivity.this, "  Player 1 Turn  ");
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 1 Turn  ",null);
         }
         else if(j==1){
-            alert.showDialog(PhaseOneActivity.this, "  Player 2 Turn  ");
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 2 Turn  ",null);
         }
         else if(j==2) {
-            alert.showDialog(PhaseOneActivity.this, "  Player 3 Turn  ");
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 3 Turn  ",null);
         }
         else {
-            alert.showDialog(PhaseOneActivity.this, "  Player 4 Turn  ");
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 4 Turn  ",null);
         }
     }
 }
