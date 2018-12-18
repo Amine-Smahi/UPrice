@@ -26,23 +26,24 @@ public class PhaseOneActivity extends AppCompatActivity {
     int productPrice;
     Product product;
     EditText editText;
-    static int indexGagnant=0;
+    static int indexGagnant = 0;
     TextView clock;
-    int [] playersScore;
-    int [] playersPrices;
-    static int j=0;
+    int[] playersScore;
+    int[] playersPrices;
+    static int j = 0;
     CountDownTimer countDownTimer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phase_one);
-        imageView = (ImageView)findViewById(R.id.ImageViewproductImage);
-        textView = (TextView)findViewById(R.id.TextViewproductName);
-        editText = (EditText)findViewById(R.id.EditTextproductPrice);
+        imageView = (ImageView) findViewById(R.id.ImageViewproductImage);
+        textView = (TextView) findViewById(R.id.TextViewproductName);
+        editText = (EditText) findViewById(R.id.EditTextproductPrice);
         clock = (TextView) findViewById(R.id.clock);
         Intent intent = getIntent();
-        playersPrices = new int[intent.getIntExtra("playersCount",0)];
-        playersScore = new int[intent.getIntExtra("playersCount",0)];
+        playersPrices = new int[intent.getIntExtra("playersCount", 0)];
+        playersScore = new int[intent.getIntExtra("playersCount", 0)];
         settingInfo();
     }
 
@@ -52,8 +53,8 @@ public class PhaseOneActivity extends AppCompatActivity {
         timeUp();
     }
 
-    void settingInfo(){
-        if(products.size()>=6) {
+    void settingInfo() {
+        if (products.size() >= 6) {
             int randomIndex = new Random().nextInt(products.size());
             product = products.get(randomIndex);
             imageView.setImageDrawable(getResources().getDrawable(product.getImageLink()));
@@ -61,16 +62,15 @@ public class PhaseOneActivity extends AppCompatActivity {
             productPrice = product.getPrice();
             playerSelection();
             products.remove(randomIndex);
-        }
-        else {
+        } else {
             winnersPhaseOne();
             ViewDialog.showDialog(PhaseOneActivity.this, "  Congrats \n Player" + winner1 + " and Player" + winner2 + " won!  ", new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(PhaseOneActivity.this,PhaseTwoActivity.class);
-                    intent.putExtra("winner1",winner1);
-                    intent.putExtra("winner2",winner2);
-                    startActivity(intent);
+                    Intent intent1 = new Intent(PhaseOneActivity.this, PhaseTwoActivity.class);
+                    intent1.putExtra("winner1", winner1);
+                    intent1.putExtra("winner2", winner2);
+                    startActivity(intent1);
                 }
             });
 
@@ -78,7 +78,7 @@ public class PhaseOneActivity extends AppCompatActivity {
     }
 
     public void submitPrice(View view) {
-        playersPrices[j]=Integer.parseInt(editText.getText().toString());
+        playersPrices[j] = Integer.parseInt(editText.getText().toString());
         editText.setText("");
         passTurn();
     }
@@ -86,43 +86,42 @@ public class PhaseOneActivity extends AppCompatActivity {
     private void passTurn() {
         timeUp();
         j++;
-        if(j==playersPrices.length){
-            j=0;
+        if (j == playersPrices.length) {
+            j = 0;
             winner();
-        }
-        else {
+        } else {
             playerSelection();
         }
     }
 
     private void winner() {
-        int min=-1;
+        int min = -1;
 
-        for(int i=0;i<playersPrices.length;i++){
-            if (playersPrices[i]<=product.getPrice() && playersPrices[i]>min ){
-                min =playersPrices[i];
+        for (int i = 0; i < playersPrices.length; i++) {
+            if (playersPrices[i] <= product.getPrice() && playersPrices[i] > min) {
+                min = playersPrices[i];
                 indexGagnant = i;
             }
         }
         settingInfo();
-        if (min!=-1){
+        if (min != -1) {
             playersScore[indexGagnant]++;
             ViewDialog.showDialog(PhaseOneActivity.this, "  Congrats \n Player " + (indexGagnant + 1) + " won!  ", null);
         }
 
     }
 
-    private void winnersPhaseOne(){
-        winner1=0;
-        winner2=playersScore.length-1;
-        for (int i=1;i<playersScore.length;i++){
-            if(playersScore[i]>playersScore[winner1]){
-                winner1=i;
+    private void winnersPhaseOne() {
+        winner1 = 0;
+        winner2 = playersScore.length - 1;
+        for (int i = 1; i < playersScore.length; i++) {
+            if (playersScore[i] > playersScore[winner1]) {
+                winner1 = i;
             }
         }
-        for (int i=0;i<playersScore.length-1;i++){
-            if(i!= winner1 && playersScore[i]>playersScore[winner2] ){
-                winner2=i;
+        for (int i = 0; i < playersScore.length - 1; i++) {
+            if (i != winner1 && playersScore[i] > playersScore[winner2]) {
+                winner2 = i;
             }
         }
         winner1++;
@@ -132,17 +131,17 @@ public class PhaseOneActivity extends AppCompatActivity {
     }
 
     public void Restart(View view) {
-        Intent intent = new Intent(this,PlayersActivity.class);
+        Intent intent = new Intent(this, PlayersActivity.class);
         startActivity(intent);
     }
-    void timeUp()
-    {
+
+    void timeUp() {
         countDownTimer = new CountDownTimer(15000, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                if ((millisUntilFinished/1000)  >= 10) {
-                    clock.setText("00:" + (millisUntilFinished/1000));
-                }else if ((millisUntilFinished/1000) == 1){
+                if ((millisUntilFinished / 1000) >= 10) {
+                    clock.setText("00:" + (millisUntilFinished / 1000));
+                } else if ((millisUntilFinished / 1000) == 1) {
                     clock.setText("00:01");
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
@@ -150,9 +149,8 @@ public class PhaseOneActivity extends AppCompatActivity {
                             clock.setText("00:00");
                         }
                     }, 1000);
-                }
-                else {
-                    clock.setText("00:0" + (millisUntilFinished/1000));
+                } else {
+                    clock.setText("00:0" + (millisUntilFinished / 1000));
                 }
             }
 
@@ -163,19 +161,16 @@ public class PhaseOneActivity extends AppCompatActivity {
         countDownTimer.cancel();
         countDownTimer.start();
     }
-    void playerSelection()
-    {
-        if(j==0){
-            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 1 Turn  ",null);
-        }
-        else if(j==1){
-            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 2 Turn  ",null);
-        }
-        else if(j==2) {
-            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 3 Turn  ",null);
-        }
-        else {
-            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 4 Turn  ",null);
+
+    void playerSelection() {
+        if (j == 0) {
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 1 Turn  ", null);
+        } else if (j == 1) {
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 2 Turn  ", null);
+        } else if (j == 2) {
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 3 Turn  ", null);
+        } else {
+            ViewDialog.showDialog(PhaseOneActivity.this, "  Player 4 Turn  ", null);
         }
     }
 }

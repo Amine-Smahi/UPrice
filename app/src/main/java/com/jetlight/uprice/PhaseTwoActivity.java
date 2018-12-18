@@ -38,9 +38,9 @@ public class PhaseTwoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phase_two);
         clock = (TextView) findViewById(R.id.clock);
         imageView = (ImageView) findViewById(R.id.imageView2);
-        /*Intent intent = getIntent();
+        Intent intent = getIntent();
         player1Index = intent.getIntExtra("winner1", 0);
-        player2Index = intent.getIntExtra("winner2", 0);*/
+        player2Index = intent.getIntExtra("winner2", 0);
         textViewProductName = (TextView) findViewById(R.id.textviewProductName);
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
@@ -54,27 +54,27 @@ public class PhaseTwoActivity extends AppCompatActivity {
         double secondWrongPrice;
         switch (randomposition) {
             case 0:
-                button1.setText(product.getPrice());
+                button1.setText(String.valueOf(product.getPrice()));
                 firstWrongPrice = product.getPrice() * 1.1;
-                button2.setText(String.valueOf(firstWrongPrice));
+                button2.setText(String.valueOf((int)firstWrongPrice));
                 secondWrongPrice = product.getPrice() * 1.2;
-                button3.setText(String.valueOf(secondWrongPrice));
+                button3.setText(String.valueOf((int)secondWrongPrice));
                 indexCorrectButton = 0;
                 break;
             case 1:
-                button2.setText(product.getPrice());
+                button2.setText(String.valueOf(product.getPrice()));
                 firstWrongPrice = product.getPrice() * 0.9;
-                button1.setText(String.valueOf(firstWrongPrice));
+                button1.setText(String.valueOf((int)firstWrongPrice));
                 secondWrongPrice = product.getPrice() * 1.1;
-                button3.setText(String.valueOf(secondWrongPrice));
+                button3.setText(String.valueOf((int)secondWrongPrice));
                 indexCorrectButton = 1;
                 break;
             case 2:
-                button3.setText(product.getPrice());
+                button3.setText(String.valueOf(product.getPrice()));
                 firstWrongPrice = product.getPrice() * 0.9;
-                button2.setText(String.valueOf(firstWrongPrice));
+                button2.setText(String.valueOf((int)firstWrongPrice));
                 secondWrongPrice = product.getPrice() * 0.8;
-                button3.setText(String.valueOf(secondWrongPrice));
+                button1.setText(String.valueOf((int)secondWrongPrice));
                 indexCorrectButton = 2;
                 break;
             default:
@@ -108,9 +108,22 @@ public class PhaseTwoActivity extends AppCompatActivity {
 
     public void winnersPhaseTwo() {
         if (scorePlayer1 > scorePlayer2) {
-            ViewDialog.showDialog(PhaseTwoActivity.this, "  Congrats \n Player " + player1Index + " won!  ", null);
+            ViewDialog.showDialog(PhaseTwoActivity.this, "  Congrats \n Player " + player1Index + " won!  ", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(PhaseTwoActivity.this,WinnerActivity.class);
+                    startActivity(intent);
+                }
+            });
         } else {
-            ViewDialog.showDialog(PhaseTwoActivity.this, "  Congrats \n Player " + player2Index + " won!  ", null);
+            ViewDialog.showDialog(PhaseTwoActivity.this, "  Congrats \n Player " + player2Index + " won!  ", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(PhaseTwoActivity.this,WinnerActivity.class);
+                    startActivity(intent);
+
+                }
+            });
         }
     }
 
