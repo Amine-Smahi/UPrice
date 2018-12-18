@@ -24,13 +24,15 @@
             android:gravity="center"
             android:layout_marginTop="20dp"
             android:textSize="25dp"/>
+
         <TextView
+            android:id="@+id/winnerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Player 1"
             android:gravity="center"
+            android:text="Player 1"
             android:textSize="30dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
         <Button
             android:layout_width="180dp"
             android:layout_height="wrap_content"

@@ -112,6 +112,7 @@ public class PhaseTwoActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(PhaseTwoActivity.this,WinnerActivity.class);
+                    intent.putExtra("1",1);
                     startActivity(intent);
                 }
             });
@@ -120,6 +121,7 @@ public class PhaseTwoActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(PhaseTwoActivity.this,WinnerActivity.class);
+                    intent.putExtra("1",2);
                     startActivity(intent);
 
                 }
